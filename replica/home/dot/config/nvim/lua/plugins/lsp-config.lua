@@ -10,9 +10,9 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "lua_ls",
+                    "hls", --haskell
                     "kotlin_language_server",
-                    "hls", -- haskell
+                    "lua_ls",
                 },
             })
         end
@@ -21,9 +21,9 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local lspc = require("lspconfig")
-            lspc.lua_ls.setup({})
             lspc.hls.setup({})
             lspc.kotlin_language_server.setup({})
+            lspc.lua_ls.setup({})
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
