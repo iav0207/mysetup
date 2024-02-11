@@ -18,10 +18,14 @@ set mouse=
 
 " Disable arrow key navigation.
 
-:nmap <Up> <Nop>
-:nmap <Left> <Nop>
-:nmap <Right> <Nop>
-:nmap <Down> <Nop>
+nmap <Up> <Nop>
+nmap <Left> <Nop>
+nmap <Right> <Nop>
+nmap <Down> <Nop>
+
+" Leader keymap
+
+let mapleader = "\<Space>"
 
 " Enable paste mode.
 set paste

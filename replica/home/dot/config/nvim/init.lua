@@ -1,6 +1,6 @@
 vim.cmd("source ~/.vimrc")
 
--- Install Lazy package manager
+-- Lazy setup
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -16,12 +16,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
 }
 local opts = {}
 
 require("lazy").setup(plugins, opts)
 
+-- Color scheme
+
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
+
+-- Telescope
+
+local builtin = require("telescope.builtin")
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
