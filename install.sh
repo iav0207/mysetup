@@ -9,10 +9,16 @@ main() {
 
 link_home_files() {
     for f in $(find $rhome/dot -type f -maxdepth 1); do
-        target_location=~/.$(basename $f)
-        if [ -f $target_location ]; then log_and_do mv $target_location ${target_location}.bak; fi
-        ln -s $f $target_location
+        link_path=~/.$(basename $f)
+	link $link_path $f
     done
+    link ~/.config/nvim $rhome/dot/config/nvim
+}
+
+link() {
+    from=$1 to=$2
+    if [ -e $from ]; then log_and_do mv $from ${from}.bak; fi
+    ln -sf $to $from
 }
 
 log_and_do() {
