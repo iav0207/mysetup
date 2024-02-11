@@ -27,6 +27,10 @@ nmap <Down> <Nop>
 
 let mapleader = "\<Space>"
 
+" Terminal mode exit
+
+tnoremap <C-w><C-w> <C-\><C-n><C-w><C-w>
+
 " Enable paste mode.
 set paste
 
