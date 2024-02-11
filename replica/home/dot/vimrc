@@ -1,6 +1,6 @@
 source ~/.vimrc.iav     " load my vim config
 
-if has('nvim') && false " disabled cuz using AstroNvim now
+if has('nvim')
     call plug#begin()
     Plug 'mrcjkb/haskell-tools.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -36,7 +36,7 @@ vmap <C-c> :w !pbcopy<CR><CR>
 
 set shell=$SHELL
 
-if has('nvim') && false " disabled: using AstroNvim
+if has('nvim')
     set termguicolors
     colorscheme melange
     nmap <Leader>tt :NvimTreeToggle<CR>
