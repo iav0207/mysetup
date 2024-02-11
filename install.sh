@@ -8,6 +8,7 @@ rhome=$repo_root/replica/home
 main() {
     link_home_files
     brew install nvim
+    install_nerd_font
 }
 
 link_home_files() {
@@ -24,6 +25,8 @@ link() {
     fi
     ln -sf $to $from
 }
+
+install_nerd_font() { curl -sS https://webi.sh/nerdfont | sh; }
 
 log_and_do() {
     cmd="$@"
