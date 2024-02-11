@@ -1,0 +1,121 @@
+"==============================
+"	VIM CONFIG
+"==============================
+
+" General settings
+
+" Set `nocompatible` to make Vim incompatible with Vi.
+set nocompatible
+
+" Disable backup files and swap files.
+set nobackup
+set noswapfile
+set nowb
+
+" Disable mouse (clicks and scrolls). Primarily for NeoVim
+
+set mouse=
+
+" Disable arrow key navigation.
+
+:nmap <Up> <Nop>
+:nmap <Left> <Nop>
+:nmap <Right> <Nop>
+:nmap <Down> <Nop>
+
+" Enable paste mode.
+set paste
+
+" Fix backspace behavior.
+set backspace=indent,eol,start
+
+" Enable syntax highlighting.
+if !has('nvim')
+    syntax on
+endif
+
+" Enable autoread to reload files when they are changed.
+set autoread
+
+" Enable file type plugins to load different settings for different file types.
+filetype plugin on
+
+" Enable spell checking.
+"setlocal spell spelllang=en,ru
+
+" Encoding settings
+
+" Set the default encoding to UTF-8, CP1251 as backup.
+set fileencodings=utf-8,cp1251
+
+" Set the encoding to UTF-8.
+set encoding=utf-8
+
+" Tab settings
+set ts=4
+set expandtab
+
+" Line break settings
+set lbr " Set line breaks to be displayed as `=>\`.
+
+" Highlight corresponding bracket to the one under cursor.
+set showmatch
+
+set wildmenu " Enable nice autocomplete menu.
+set splitbelow " Place new buffers below the current one.
+set splitright " Place new buffers to the right of the current one.
+set ssop+=resize " Save buffer positions and sizes when Vim exits.
+
+" Interface settings
+set number " Enable line numbers.
+set wrap
+set ruler " Display the cursor coordinates in the bottom right corner.
+set showmode " Show the current mode in the status line.
+set showcmd " Show the current command in the status line.
+syntax on
+set autoindent
+
+" Search settings
+
+" Ignore case by default, but use case-sensitive search if the search term contains uppercase letters.
+set ignorecase
+set smartcase
+set hlsearch " Highlight search results.
+set incsearch " Highlight search results as you type.
+
+nnoremap <c-s> :let @/=""<CR>
+
+" Visually highlight text
+vnoremap <c-f> y<ESC>/<c-r>"<CR>
+
+
+" Listchars
+
+" Display spaces and tabs in list mode.
+set listchars=tab:>-,trail:-
+
+" LaTeX-Suite
+
+" Enable Latex-Suite for LaTeX files.
+filetype plugin on
+
+" Set `shellslash` to ensure that LaTeX is called correctly on Windows.
+set shellslash
+
+" Set `grepprg` to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" Enable automatic indentation for LaTeX files.
+filetype indent on
+
+" Set the default filetype for empty LaTeX files to `tex`.
+let g:tex_flavor='latex'
+
+" Set the output file format to PDF.
+let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
+let g:Tex_DefaultTargetFormat='pdf'
+
+" Other settings
+
+" Map `H` to `H` to make the cursor jump to the beginning of the line.
+imap H H
