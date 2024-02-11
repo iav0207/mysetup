@@ -61,6 +61,7 @@ set encoding=utf-8
 
 " Tab settings
 set ts=4
+set shiftwidth=4
 set expandtab
 
 " Line break settings
