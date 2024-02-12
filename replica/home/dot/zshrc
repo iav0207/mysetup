@@ -1,25 +1,48 @@
 export ZSH=~/.oh-my-zsh
-
 ZSH_THEME="robbyrussell"
 
-zrc() { vim ~/.zshrc; }
-zrcup() { source ~/.zshrc && echo '.zshrc executed'; }
+zstyle ':omz:update' mode reminder # just remind me to update when it's time
+zstyle ':omz:update' frequency 13
 
-plugins=(git zsh-autosuggestions)
+export MANPATH="/usr/local/man:$MANPATH"
+export LANG=en_US.UTF-8
+export EDITOR='nvim'
 
-source_if_exists() { [ -e $1 ] && source $1; }
+plugins=(git)
+
+# Zsh Autocompletion, taken from https://g3doc.corp.google.com/company/users/julienbc/cmdline/index.md?cl=head#command-line-setup
+zstyle ':completion:*' menu yes select
+zstyle ':completion::complete:*' use-cache 1        # enables completion caching
+zstyle ':completion::complete:*' cache-path ~/.zsh/cache
+autoload -Uz compinit && compinit -i
+
+source_if_exists() { [ -e $1 ] && source $1 || true; }
 
 source_if_exists $ZSH/oh-my-zsh.sh
 source_if_exists ~/.bash_profile
-source_if_exists /Users/iav0207/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source_if_exists ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# added by travis gem
-[ ! -s /Users/iav0207/.travis/travis.sh ] || source /Users/iav0207/.travis/travis.sh
+source_if_exists /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source_if_exists /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# Rc-file settings
+
+rcfile=~/.zshrc
+
+brc() { vim "${rcfile}"; }
+brcup() { source "${rcfile}"; }
+zrc() { vim ~/.zshrc; }
+zrcup() { source ~/.zshrc && echo '.zshrc executed'; }
+
+
+source_if_exists ~/.travis/travis.sh # added by travis gem
+source_if_exists ~/.ghcup/env # ghcup-env
+source_if_exists ~/.config/envman/load.sh # envman
+
+source_if_exists ~/.zshrc.work # work stuff
+
+# This must be at the end of the file for sdkman to work!
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+source_if_exists ~/.sdkman/bin/sdkman-init.sh || true
 
-[ -f "/Users/iav0207/.ghcup/env" ] && source "/Users/iav0207/.ghcup/env" # ghcup-env
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
