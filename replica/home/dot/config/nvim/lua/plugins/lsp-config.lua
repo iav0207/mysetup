@@ -20,10 +20,12 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
+            local cap = require('cmp_nvim_lsp').default_capabilities()
+
             local lspc = require("lspconfig")
-            lspc.hls.setup({})
-            lspc.kotlin_language_server.setup({})
-            lspc.lua_ls.setup({})
+            lspc.hls.setup({ capabilities = cap })
+            lspc.kotlin_language_server.setup({ capabilities = cap })
+            lspc.lua_ls.setup({ capabilities = cap })
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions

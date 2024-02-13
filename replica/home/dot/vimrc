@@ -31,9 +31,6 @@ let mapleader = "\<Space>"
 
 tnoremap <C-w><C-w> <C-\><C-n><C-w><C-w>
 
-" Enable paste mode.
-set paste
-
 " Fix backspace behavior.
 set backspace=indent,eol,start
 
@@ -42,9 +39,6 @@ set autoread
 
 " Enable file type plugins to load different settings for different file types.
 filetype plugin on
-
-" Enable spell checking.
-"setlocal spell spelllang=en,ru
 
 " Encoding settings
 
@@ -65,7 +59,7 @@ set lbr " Set line breaks to be displayed as `=>\`.
 " Highlight corresponding bracket to the one under cursor.
 set showmatch
 
-set wildmenu " Enable nice autocomplete menu.
+set wildmenu " Enable nice command autocomplete menu.
 set splitbelow " Place new buffers below the current one.
 set splitright " Place new buffers to the right of the current one.
 set ssop+=resize " Save buffer positions and sizes when Vim exits.
