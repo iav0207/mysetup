@@ -8,7 +8,7 @@ rhome=$repo_root/replica/home
 main() {
     link_home_files
     install_nerd_font
-    brew install nvim delve # delve is here just for the working debugging example
+    brew install nvim lazygit delve # delve is here just for the working debugging example
 }
 
 link_home_files() {
