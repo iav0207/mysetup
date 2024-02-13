@@ -9,5 +9,20 @@ return {
     },
     config = function()
         vim.keymap.set('n', '<C-n>', ':Neotree<CR>', {})
+        require('neo-tree').setup({
+            window = { width = 30 },
+            buffers = { follow_current_file = true },
+            filesystem = {
+                follow_current_file = true,
+                filtered_items = {
+                    hide_dotfiles = false,
+                    hide_gitignored = false,
+                    hide_by_name = {
+                        -- example: "node_modules",
+                    },
+                    never_show = { ".DS_Store" },
+                },
+            },
+        })
     end
 }
