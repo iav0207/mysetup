@@ -7,8 +7,8 @@ rhome=$repo_root/replica/home
 
 main() {
     link_home_files
-    brew install nvim
     install_nerd_font
+    brew install nvim delve # delve is here just for the working debugging example
 }
 
 link_home_files() {
