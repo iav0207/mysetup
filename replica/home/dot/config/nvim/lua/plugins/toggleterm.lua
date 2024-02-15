@@ -15,5 +15,6 @@ return {
 		})
 		vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", {})
 		vim.keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<CR>", {})
+		vim.keymap.set("n", "<leader>tg", ":TermExec direction=float cmd=lazygit<CR>", {})
 	end,
 }
