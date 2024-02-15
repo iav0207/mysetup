@@ -9,4 +9,10 @@ return {
         -- Options: https://github.com/folke/which-key.nvim?tab=readme-ov-file#-setup
         -- Custom mappings: https://github.com/folke/which-key.nvim?tab=readme-ov-file#-setup
     },
+    config = function()
+        local wk = require("which-key")
+        wk.register({
+            ["<C-l>"] = "Reset search",
+        })
+    end,
 }
