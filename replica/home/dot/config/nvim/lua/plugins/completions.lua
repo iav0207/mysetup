@@ -41,8 +41,7 @@ return {
 					["<C-j>"] = cmp.mapping.select_next_item(select_opts),
 					-- Termination
 					["<C-e>"] = cmp.mapping.abort(), -- Cancel completion
-					["<Esc>"] = cmp.mapping.abort(), -- Cancel completion
-					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
