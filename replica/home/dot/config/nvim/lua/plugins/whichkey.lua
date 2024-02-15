@@ -1,0 +1,12 @@
+return {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+        vim.o.timeout = true
+        vim.o.timeoutlen = 300
+    end,
+    opts = {
+        -- Options: https://github.com/folke/which-key.nvim?tab=readme-ov-file#-setup
+        -- Custom mappings: https://github.com/folke/which-key.nvim?tab=readme-ov-file#-setup
+    },
+}
