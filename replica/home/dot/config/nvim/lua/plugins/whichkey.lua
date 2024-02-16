@@ -13,6 +13,7 @@ return {
         local wk = require("which-key")
         wk.register({
             ["<C-l>"] = "Reset search",
+            ["<leader>rn"] = "Rename identifier",
         })
     end,
 }
