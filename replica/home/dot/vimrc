@@ -128,3 +128,12 @@ if !has('nvim')
     syntax on " Enable syntax highlighting.
 endif
 
+" Using alt+backspace to delete a word in insert mode
+" https://stackoverflow.com/a/73444171/9401508
+" more info on mapping alt keys :help map-alt-keys
+if has('gui_running')
+    imap <M-BS> <C-w>
+else
+    imap <Esc><BS> <C-w>
+endif
+
