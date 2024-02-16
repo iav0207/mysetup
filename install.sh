@@ -18,6 +18,7 @@ brew_pkgs=(
     tmux
     delve # this is here jsut for a debugging example
 )
+
 link_home_files() {
     for f in $(find $rhome/dot -type f -maxdepth 1); do
         link ~/.$(basename $f) $f
@@ -35,7 +36,17 @@ link() {
     ln -sf $to $from
 }
 
-install_nerd_font() { curl -sS https://webi.sh/nerdfont | sh; }
+install_nerd_font() {
+    if macos; then
+        brew tap homebrew/cask-fonts
+        brew install font-inconsolata
+    else
+        curl -sS https://webi.sh/nerdfont | sh
+    fi
+}
+
+function macos() { [[ "$(uname -a)" =~ Darwin ]]; }
+
 install_tmux_plugin_mgr() {
     mkdir -p $rhome/dot/tmux/plugins
     [[ -e ~/.tmux/plugins/tpm ]] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
