@@ -13,23 +13,22 @@ set noswapfile
 set nowb
 
 " Disable mouse (clicks and scrolls). Primarily for NeoVim
-
 set mouse=
 
 " Disable arrow key navigation.
-
 nmap <Up> <Nop>
 nmap <Left> <Nop>
 nmap <Right> <Nop>
 nmap <Down> <Nop>
 
 " Leader keymap
-
 let mapleader = "\<Space>"
 
 " Terminal mode exit
-
 tnoremap <C-w><C-w> <C-\><C-n><C-w><C-w>
+
+" Unmap my tmux prefix key
+nnoremap <C-a> <Nop>
 
 " Fix backspace behavior.
 set backspace=indent,eol,start

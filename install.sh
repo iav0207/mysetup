@@ -8,14 +8,23 @@ rhome=$repo_root/replica/home
 main() {
     link_home_files
     install_nerd_font
-    brew install nvim lazygit delve # delve is here just for the working debugging example
+    brew install $brew_pkgs
+    install_tmux_plugin_mgr
 }
 
+brew_pkgs=(
+    nvim
+    lazygit
+    tmux
+    delve # this is here jsut for a debugging example
+)
 link_home_files() {
     for f in $(find $rhome/dot -type f -maxdepth 1); do
         link ~/.$(basename $f) $f
     done
     link ~/.config/nvim $rhome/dot/config/nvim
+    link ~/.config/tmux $rhome/dot/config/tmux
+    link ~/.tmux $rhome/dot/tmux
 }
 
 link() {
@@ -27,6 +36,10 @@ link() {
 }
 
 install_nerd_font() { curl -sS https://webi.sh/nerdfont | sh; }
+install_tmux_plugin_mgr() {
+    mkdir -p $rhome/dot/tmux/plugins
+    [[ -e ~/.tmux/plugins/tpm ]] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
 
 log_and_do() {
     cmd="$@"
