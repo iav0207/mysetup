@@ -28,10 +28,13 @@ let mapleader = "\<Space>"
 tnoremap <C-w><C-w> <C-\><C-n><C-w><C-w>
 
 " Unmap my tmux prefix key
-nnoremap <C-a> <Nop>
+nnoremap <C-s> <Nop>
 
 " Fix backspace behavior.
 set backspace=indent,eol,start
+
+" Write the buffer
+nmap <leader>w :w<CR>
 
 " Enable autoread to reload files when they are changed.
 set autoread
@@ -80,7 +83,7 @@ set smartcase
 set hlsearch " Highlight search results.
 set incsearch " Highlight search results as you type.
 
-nnoremap <c-s> :let @/=""<CR>
+nnoremap <c-a> :let @/=""<CR>
 
 " Visually highlight text
 vnoremap <c-f> y<ESC>/<c-r>"<CR>
