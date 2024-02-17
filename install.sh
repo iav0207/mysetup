@@ -6,6 +6,7 @@ repo_root=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 rhome=$repo_root/replica/home
 
 main() {
+    install_omz
     link_home_files
     install_nerd_font
     brew install $brew_pkgs
@@ -13,11 +14,19 @@ main() {
 }
 
 brew_pkgs=(
+    zsh-syntax-highlighting
     nvim
     lazygit
     tmux
     delve # this is here jsut for a debugging example
 )
+
+install_omz() {
+    if [ ! -e ~/.oh-my-zsh ]; then
+        omz_install_script=https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+        sh -c "$(curl -fsSL $"{omz_install_script}")"
+    fi
+}
 
 link_home_files() {
     for f in $(find $rhome/dot -type f -maxdepth 1); do
