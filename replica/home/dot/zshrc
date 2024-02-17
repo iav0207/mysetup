@@ -9,7 +9,7 @@ export LANG=en_US.UTF-8
 export EDITOR='nvim'
 export XDG_CONFIG_HOME=~/.config
 
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 # Zsh Autocompletion, taken from https://g3doc.corp.google.com/company/users/julienbc/cmdline/index.md?cl=head#command-line-setup
 zstyle ':completion:*' menu yes select
