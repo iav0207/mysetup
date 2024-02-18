@@ -34,7 +34,7 @@ nnoremap <C-s> <Nop>
 set backspace=indent,eol,start
 
 " Write the buffer
-nmap <leader>w :w<CR>
+nnoremap <leader>w :w<CR>
 
 " Enable autoread to reload files when they are changed.
 set autoread
@@ -116,9 +116,6 @@ let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
 let g:Tex_DefaultTargetFormat='pdf'
 
 " Other settings
-
-" Map `H` to `H` to make the cursor jump to the beginning of the line.
-imap H H
 
 " System clipboard copy
 vmap <C-c> :w !pbcopy<CR><CR>
