@@ -14,6 +14,8 @@ return {
         wk.register({
             ["<C-l>"] = "Reset search",
             ["<leader>rn"] = "Rename identifier",
+            ["<leader>fg"] = "File grep",
+            ["<C-p>"] = "Find files",
         })
     end,
 }
