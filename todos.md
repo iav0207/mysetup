@@ -10,4 +10,5 @@
 
 - nvim
     - Kotlin LSP gets attached to Gradle projects, but not to standalone Kotlin source files. I've read quite a few Reddit threads, and it seems that it may work decently using Coc.vim or LanguageClient instead the native nvim LSP config.
+        - https://github.com/fwcd/kotlin-language-server/tree/eee8afa9b6b92c4c5ae445823b3719818d595ec1?tab=readme-ov-file#figuring-out-the-dependencies
 

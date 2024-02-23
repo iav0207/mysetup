@@ -19,6 +19,7 @@ brew_pkgs=(
     nvim
     lazygit
     tmux
+    kotlin
     delve # this is here jsut for a debugging example
 )
 
@@ -33,8 +34,9 @@ link_home_files() {
     for f in $(find $rhome/dot -type f -maxdepth 1); do
         link ~/.$(basename $f) $f
     done
-    link ~/.config/nvim $rhome/dot/config/nvim
-    link ~/.config/tmux $rhome/dot/config/tmux
+    for d in $(find $rhome/dot/config/ -type d -maxdepth 1 -mindepth 1); do
+        link ~/.config/$(basename $d) $d
+    done
     link ~/.tmux $rhome/dot/tmux
 }
 
