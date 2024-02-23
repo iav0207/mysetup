@@ -1,7 +1,6 @@
 # Known issues / things to improve
 
 - nvim
-    - many duplicates in autosuggestions
     - handle caps lock
     - Telescope: open split without exiting to normal mode
     - Kotlin LSP does not get attached
