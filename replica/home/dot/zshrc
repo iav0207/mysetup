@@ -9,6 +9,16 @@ export LANG=en_US.UTF-8
 export EDITOR='nvim'
 export XDG_CONFIG_HOME=~/.config
 
+source_if_exists() { [ -e $1 ] && source $1 || true; }
+
+source_if_exists $ZSH/oh-my-zsh.sh
+source_if_exists ~/.bash_profile
+
+source_if_exists ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source_if_exists /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source_if_exists $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 plugins=(git zsh-autosuggestions)
 
 # Zsh Autocompletion, taken from https://g3doc.corp.google.com/company/users/julienbc/cmdline/index.md?cl=head#command-line-setup
@@ -16,16 +26,6 @@ zstyle ':completion:*' menu yes select
 zstyle ':completion::complete:*' use-cache 1        # enables completion caching
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 autoload -Uz compinit && compinit -i
-
-source_if_exists() { [ -e $1 ] && source $1 || true; }
-
-source_if_exists $ZSH/oh-my-zsh.sh
-source_if_exists ~/.bash_profile
-source_if_exists ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source_if_exists /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source_if_exists /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Rc-file settings
 

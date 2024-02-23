@@ -14,6 +14,7 @@ main() {
 }
 
 brew_pkgs=(
+    zsh-autosuggestions
     zsh-syntax-highlighting
     nvim
     lazygit
