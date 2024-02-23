@@ -6,6 +6,20 @@ return {
         end,
     },
     {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        config = function()
+            require("mason-tool-installer").setup({
+                ensure_installed = {
+                    "kotlin_language_server",
+                    "ktlint",
+                    "stylua",
+                    "black",
+                    "isort",
+                },
+            })
+        end,
+    },
+    {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
