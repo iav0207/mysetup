@@ -11,9 +11,9 @@ return {
 		vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", {})
 		require("neo-tree").setup({
 			window = { width = 30 },
-			buffers = { follow_current_file = true },
+			buffers = { follow_current_file = { enabled = true } },
 			filesystem = {
-				follow_current_file = true,
+				follow_current_file = { enabled = true },
 				filtered_items = {
 					hide_dotfiles = false,
 					hide_gitignored = false,
