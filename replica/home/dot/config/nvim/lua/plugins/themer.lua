@@ -1,8 +1,10 @@
 return {
 	"themercorp/themer.lua",
+    lazy = false,
+    priority = 9999,
 	config = function()
 		require("themer").setup({
-			colorscheme = "gruvbox-material-dark-hard",
+			colorscheme = "catppuccin",
             -- To cycle through the list of available color schemes:
             -- :lua require("telescope").load_extension("themes")
             -- :Telescope themes

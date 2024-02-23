@@ -4,7 +4,7 @@ return {
     config = function()
         require('lualine').setup({
             -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
-            options = { theme = 'gruvbox_dark' }
+            options = { theme = 'auto' },
         })
     end
 }
