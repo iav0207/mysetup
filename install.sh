@@ -21,6 +21,7 @@ brew_pkgs=(
     tmux
     kotlin
     delve # this is here jsut for a debugging example
+    wget
 )
 
 install_omz() {
