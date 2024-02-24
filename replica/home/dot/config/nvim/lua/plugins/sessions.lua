@@ -18,6 +18,9 @@ return {
 			auto_save_enabled = true,
 			auto_restore_enabled = true,
 			-- auto_session_use_git_branch = true,
+
+            -- Handling NeoTree
+            -- https://github.com/nvim-neo-tree/neo-tree.nvim/issues/400
 			bypass_session_save_file_types = { "neo-tree" },
 			pre_save_cmds = {
 				close_neo_tree,
