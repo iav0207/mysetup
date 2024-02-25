@@ -11,6 +11,7 @@ main() {
     install_nerd_font
     brew install $brew_pkgs
     install_tmux_plugin_mgr
+    install_iterm2_cfg
 }
 
 brew_pkgs=(
@@ -46,7 +47,7 @@ link() {
     if [ -e $from ]; then
         log_and_do "rm -rf ${from}.bak && mv -f $from ${from}.bak"
     fi
-    ln -sf $to $from
+    log_and_do ln -sf $to $from
 }
 
 install_nerd_font() {
@@ -63,6 +64,14 @@ function macos() { [[ "$(uname -a)" =~ Darwin ]]; }
 install_tmux_plugin_mgr() {
     mkdir -p $rhome/dot/tmux/plugins
     [[ -e ~/.tmux/plugins/tpm ]] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
+install_iterm2_cfg() {
+    cfg_fname=com.googlecode.iterm2.plist
+    native_cfg_location=$HOME/Library/Preferences/$cfg_fname
+    repo_cfg_location=$rhome/dot/config/iterm2/$cfg_fname
+    mkdir -p $(dirname $native_cfg_location)
+    link $native_cfg_location $repo_cfg_location
 }
 
 log_and_do() {
