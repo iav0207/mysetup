@@ -24,6 +24,7 @@ return {
 				c = "Close",
 				h = "File history",
 			},
+			ac = "Toggle autocomplete",
 		}, {
 			prefix = "<leader>",
 			mode = "n",
