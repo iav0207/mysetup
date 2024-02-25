@@ -9,7 +9,7 @@ main() {
     install_omz
     link_home_files
     install_nerd_font
-    brew install $brew_pkgs
+    if macos; then brew install $brew_pkgs; fi
     install_tmux_plugin_mgr
     install_iterm2_cfg
 }
