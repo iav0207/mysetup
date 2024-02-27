@@ -36,6 +36,13 @@ brcup() { source "${rcfile}"; }
 zrc() { vim ~/.zshrc; }
 zrcup() { source ~/.zshrc && echo '.zshrc executed'; }
 
+# functions / aliases
+
+alias ls='eza -G'
+alias ll='eza -lah'
+alias tree='eza --tree'
+
+# other sources
 
 source_if_exists ~/.travis/travis.sh # added by travis gem
 source_if_exists ~/.ghcup/env # ghcup-env

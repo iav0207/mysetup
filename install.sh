@@ -23,6 +23,7 @@ brew_pkgs=(
     kotlin
     delve # this is here jsut for a debugging example
     wget
+    eza # community-maintained fork of exa
 )
 
 install_omz() {
