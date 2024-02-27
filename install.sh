@@ -55,7 +55,13 @@ link() {
 install_nerd_font() {
     if macos; then
         brew tap homebrew/cask-fonts
-        brew install font-inconsolata
+        fonts=(
+            font-fira-code-nerd-font
+            font-droid-sans-mono-nerd-font
+            font-inconsolata-nerd-font
+            font-geist-mono-nerd-font
+        )
+        brew install $fonts
     else
         curl -sS https://webi.sh/nerdfont | sh
     fi
