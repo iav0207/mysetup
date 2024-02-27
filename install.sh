@@ -24,6 +24,7 @@ brew_pkgs=(
     delve # this is here jsut for a debugging example
     wget
     eza # community-maintained fork of exa
+    bat
 )
 
 install_omz() {

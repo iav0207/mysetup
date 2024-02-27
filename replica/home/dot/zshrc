@@ -41,6 +41,7 @@ zrcup() { source ~/.zshrc && echo '.zshrc executed'; }
 alias ls='eza -G'
 alias ll='eza -lah'
 alias tree='eza --tree'
+alias cat='bat -p'
 
 # other sources
 
