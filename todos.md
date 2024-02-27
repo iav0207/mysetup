@@ -8,7 +8,9 @@
     - haskell language server is constantly logging errors about heap size
     - lsp-zero https://youtu.be/c9y7bKk-R7U?si=L4TAexc3y8vs7BQO
 - install.sh: test the script in a container: single shot and success on the second run
-- iterm2 config sync issue: the link gets replaced with a file.
+- iterm2
+    - config sync issue: the link gets replaced with a file.
+    - the config is binary: bad idea to keep in git.
 
 # Known issues
 
