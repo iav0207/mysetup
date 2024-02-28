@@ -17,6 +17,7 @@ main() {
 brew_pkgs=(
     zsh-autosuggestions
     zsh-syntax-highlighting
+    ripgrep
     nvim
     lazygit
     tmux
