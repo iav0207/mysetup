@@ -11,6 +11,7 @@
 - iterm2
     - config sync issue: the link gets replaced with a file.
     - the config is binary: bad idea to keep in git.
+        - use Google drive to sync it?
 
 # Known issues
 
