@@ -26,6 +26,7 @@ brew_pkgs=(
     wget
     eza # community-maintained fork of exa
     bat
+    p7zip # 7z
 )
 
 install_omz() {
