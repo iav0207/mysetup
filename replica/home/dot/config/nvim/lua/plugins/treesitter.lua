@@ -12,6 +12,7 @@ return {
                 "lua",
                 "python",
                 "vim",
+                "markdown",
             },
             highlight = { enable = true },
             indent = { enable = true },
