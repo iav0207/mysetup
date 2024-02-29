@@ -58,10 +58,11 @@ install_nerd_font() {
     if macos; then
         brew tap homebrew/cask-fonts
         fonts=(
-            font-fira-code-nerd-font
             font-droid-sans-mono-nerd-font
-            font-inconsolata-nerd-font
+            font-fira-code-nerd-font
             font-geist-mono-nerd-font
+            font-inconsolata-nerd-font
+            font-ubuntu-mono-nerd-font
         )
         brew install $fonts
     else
