@@ -8,7 +8,7 @@ rhome=$repo_root/replica/home
 main() {
     install_omz
     link_home_files
-    install_nerd_font
+    install_nerd_fonts
     if macos; then brew install $brew_pkgs; fi
     install_tmux_plugin_mgr
     install_iterm2_cfg
@@ -54,7 +54,7 @@ link() {
     log_and_do ln -sf $to $from
 }
 
-install_nerd_font() {
+install_nerd_fonts() {
     if macos; then
         brew tap homebrew/cask-fonts
         fonts=(
