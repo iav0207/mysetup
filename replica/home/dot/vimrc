@@ -136,3 +136,6 @@ else
     imap <Esc><BS> <C-w>
 endif
 
+" conceal level. Obsidian requires 1 or 2.
+set conceallevel=1
+
