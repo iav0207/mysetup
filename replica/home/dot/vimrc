@@ -139,3 +139,10 @@ endif
 " conceal level. Obsidian requires 1 or 2.
 set conceallevel=1
 
+" Makefile bindings for Advent of Code
+nmap <leader>mb :w<CR>:!make build<CR>
+nmap <leader>mde :w<CR>:!make build && make debug < example.txt<CR>
+nmap <leader>mdi :w<CR>:!make build && make debug < input.txt<CR>
+nmap <leader>mre :w<CR>:!make build && make run < example.txt<CR>
+nmap <leader>mri :w<CR>:!make build && make run < input.txt<CR>
+

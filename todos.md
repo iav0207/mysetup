@@ -2,7 +2,6 @@
 
 - nvim
     - search and replace https://github.com/nvim-pack/nvim-spectre
-    - write makefile keybindings for AoC
     - cmp suggestions to be triggered manually https://www.reddit.com/r/neovim/s/F2xCHX2unu
     - conform.nvim (manage linters and formatters) https://www.youtube.com/watch?v=y1WWOaLCNyI
     - haskell language server is constantly logging errors about heap size

@@ -25,6 +25,20 @@ return {
                 h = "File history",
             },
             ac = "Toggle autocomplete",
+            m = {
+                name = "Make",
+                b = "Build",
+                d = {
+                    name = "Debug",
+                    e = "on example.txt (AoC)",
+                    i = "on input.txt (AoC)",
+                },
+                r = {
+                    name = "Run",
+                    e = "on example.txt (AoC)",
+                    i = "on input.txt (AoC)",
+                },
+            },
         }, {
             prefix = "<leader>",
             mode = "n",
