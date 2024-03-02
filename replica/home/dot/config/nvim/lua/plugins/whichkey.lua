@@ -14,6 +14,8 @@ return {
         wk.register({
             ["<C-l>"] = "Reset search",
             ["<C-p>"] = "Find files",
+            ["[d"] = "Go to prev diagnostic",
+            ["]d"] = "Go to next diagnostic",
         })
         wk.register({
             rn = "Rename identifier",
@@ -39,6 +41,9 @@ return {
                     i = "on input.txt (AoC)",
                 },
             },
+            e = "Open diagnostic float",
+            i = "Open diagnostic float",
+            q = "List all diagnostics",
         }, {
             prefix = "<leader>",
             mode = "n",
