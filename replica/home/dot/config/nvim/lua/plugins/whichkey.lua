@@ -12,7 +12,7 @@ return {
     config = function()
         local wk = require("which-key")
         wk.register({
-            ["<C-l>"] = "Reset search",
+            ["<C-a>"] = "Reset search",
             ["<C-p>"] = "Find files",
             ["[d"] = "Go to prev diagnostic",
             ["]d"] = "Go to next diagnostic",
