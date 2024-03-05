@@ -9,7 +9,7 @@ main() {
     install_omz
     link_home_files
     install_nerd_fonts
-    if macos; then brew install $brew_pkgs; fi
+    if macos; then brew install ${brew_pkgs[@]}; fi
     install_tmux_plugin_mgr
     install_iterm2_cfg
 }
@@ -64,7 +64,7 @@ install_nerd_fonts() {
             font-inconsolata-nerd-font
             font-ubuntu-mono-nerd-font
         )
-        brew install $fonts
+        brew install ${fonts[@]}
     else
         curl -sS https://webi.sh/nerdfont | sh
     fi
