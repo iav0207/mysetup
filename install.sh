@@ -73,9 +73,14 @@ install_nerd_fonts() {
 function macos() { [[ "$(uname -a)" =~ Darwin ]]; }
 
 install_tmux_plugin_mgr() {
-    mkdir -p $rhome/dot/tmux/plugins
-    [[ -e ~/.tmux/plugins/tpm ]] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    mkdir -p $rhome/dot/tmux/plugins/tpm
+    if emptydir ~/.tmux/plugins/tpm; then
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;
+    fi
+    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 }
+
+function emptydir() { [[ -z "$(ls -A $1)" ]]; }
 
 install_iterm2_cfg() {
     cfg_fname=com.googlecode.iterm2.plist
