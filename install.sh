@@ -9,7 +9,13 @@ main() {
     install_omz
     link_home_files
     install_nerd_fonts
-    if macos; then brew install ${brew_pkgs[@]}; fi
+    if macos
+        then brew install ${brew_pkgs[@]}
+        else
+            sudo apt install ${apt_pkgs[@]}
+            linux_install_neovim
+            linux_install_lazygit
+    fi
     install_tmux_plugin_mgr
     install_iterm2_cfg
 }
@@ -29,6 +35,16 @@ brew_pkgs=(
     p7zip # 7z
 )
 
+apt_pkgs=(
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    ripgrep
+    tmux
+    exa
+    bat
+    p7zip
+)
+
 install_omz() {
     if [ ! -e ~/.oh-my-zsh ]; then
         omz_install_script=https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
@@ -37,10 +53,10 @@ install_omz() {
 }
 
 link_home_files() {
-    for f in $(find $rhome/dot -type f -maxdepth 1); do
+    for f in $(find $rhome/dot -maxdepth 1 -type f); do
         link ~/.$(basename $f) $f
     done
-    for d in $(find $rhome/dot/config/ -type d -maxdepth 1 -mindepth 1); do
+    for d in $(find $rhome/dot/config/ -maxdepth 1 -mindepth 1 -type d); do
         link ~/.config/$(basename $d) $d
     done
     link ~/.tmux $rhome/dot/tmux
@@ -88,6 +104,19 @@ install_iterm2_cfg() {
     repo_cfg_location=$rhome/dot/config/iterm2/$cfg_fname
     mkdir -p $(dirname $native_cfg_location)
     link $native_cfg_location $repo_cfg_location
+}
+
+linux_install_lazygit() { # https://github.com/jesseduffield/lazygit?tab=readme-ov-file#ubuntu
+    LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+    curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+    tar xf lazygit.tar.gz lazygit
+    sudo install lazygit /usr/local/bin && echo 'Installed lazygit.'
+}
+
+linux_install_neovim() { # https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+    sudo rm -rf /opt/nvim
+    sudo tar -C /opt -xzf nvim-linux64.tar.gz
 }
 
 log_and_do() {
