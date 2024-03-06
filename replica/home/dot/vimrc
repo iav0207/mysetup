@@ -35,6 +35,8 @@ set backspace=indent,eol,start
 
 " Write the buffer
 nnoremap <leader>w :w<CR>
+nnoremap <leader>wq :wq<CR>
+nnoremap <leader>q :q<CR>
 
 " Enable autoread to reload files when they are changed.
 set autoread
