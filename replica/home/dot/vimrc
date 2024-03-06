@@ -105,7 +105,7 @@ set shellslash
 " Set `grepprg` to always generate a file-name.
 set grepprg=grep\ -nH\ $*
 
-" Enable automatic indentation for LaTeX files.
+" Enable automatic indentation
 filetype indent on
 
 " Set the default filetype for empty LaTeX files to `tex`.
@@ -143,3 +143,7 @@ nmap <leader>mdi :w<CR>:!make build && make debug < input.txt<CR>
 nmap <leader>mre :w<CR>:!make build && make run < example.txt<CR>
 nmap <leader>mri :w<CR>:!make build && make run < input.txt<CR>
 
+" A possibility to plug in machine-specific configuration
+if filereadable('~/.vimrc.local')
+    source ~/.vimrc.local
+endif
