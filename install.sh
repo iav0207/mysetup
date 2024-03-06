@@ -43,6 +43,7 @@ apt_pkgs=(
     exa
     bat
     p7zip
+    python3.11-venv # for some nvim language servers
 )
 
 install_omz() {
