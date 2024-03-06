@@ -50,6 +50,14 @@ install_omz() {
         omz_install_script=https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
         sh -c "$(curl -fsSL $"{omz_install_script}")"
     fi
+    local zcustom=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
+    local plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+    if ! macos; then
+        for plugin in ${plugins[@]}; do
+            local pdir=$zcustom/plugins/$plugin
+            [ -e $pdir ] || git clone https://github.com/zsh-users/$plugin $pdir
+        done
+    fi
 }
 
 link_home_files() {
