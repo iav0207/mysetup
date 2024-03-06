@@ -10,6 +10,9 @@ return {
         },
     },
     {
+        "hrsh7th/cmp-buffer",
+    },
+    {
         "hrsh7th/nvim-cmp",
         config = function()
             local cmp = require("cmp")
@@ -65,7 +68,7 @@ return {
             vim.api.nvim_create_user_command("NvimCmpToggle", toggle_autocomplete, {})
 
             -- Set a keymap like this for example:
-            vim.api.nvim_set_keymap('n', '<Leader>ac', ':NvimCmpToggle<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<Leader>ac", ":NvimCmpToggle<CR>", { noremap = true, silent = true })
         end,
     },
 }
