@@ -19,13 +19,13 @@ source_if_exists() { [ -e $1 ] && source $1 || true; }
 macos && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 source_if_exists ~/.bash_profile
-source_if_exists ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-macos && source_if_exists /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+macos && source_if_exists $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 macos && source_if_exists $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+# plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source_if_exists $ZSH/oh-my-zsh.sh
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=22'
 # Zsh Autocompletion, taken from https://g3doc.corp.google.com/company/users/julienbc/cmdline/index.md?cl=head#command-line-setup
 zstyle ':completion:*' menu yes select
 zstyle ':completion::complete:*' use-cache 1        # enables completion caching
