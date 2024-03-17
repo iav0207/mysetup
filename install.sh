@@ -33,6 +33,7 @@ brew_pkgs=(
     eza # community-maintained fork of exa
     bat
     p7zip # 7z
+    npm # having npm installed fixed the problem of pyright LSP not attaching
 )
 
 apt_pkgs=(
@@ -44,6 +45,7 @@ apt_pkgs=(
     bat
     p7zip
     python3.11-venv # for some nvim language servers
+    npm
 )
 
 install_omz() {

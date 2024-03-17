@@ -27,6 +27,7 @@ return {
                     "hls", --haskell
                     "kotlin_language_server",
                     "lua_ls",
+                    "pyright", -- python
                 },
             })
         end,
@@ -40,6 +41,7 @@ return {
             lspc.hls.setup({ capabilities = cap })
             lspc.kotlin_language_server.setup({ capabilities = cap })
             lspc.lua_ls.setup({ capabilities = cap })
+            lspc.pyright.setup({ capabilities = cap })
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
