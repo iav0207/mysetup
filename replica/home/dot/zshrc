@@ -35,9 +35,9 @@ autoload -Uz compinit && compinit -i
 
 rcfile=~/.zshrc
 
-brc() { vim "${rcfile}"; }
+brc() { nvim "${rcfile}"; }
 brcup() { source "${rcfile}"; }
-zrc() { vim ~/.zshrc; }
+zrc() { nvim ~/.zshrc; }
 zrcup() { source ~/.zshrc && echo '.zshrc executed'; }
 
 # functions / aliases
