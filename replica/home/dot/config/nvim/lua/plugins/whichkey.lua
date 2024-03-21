@@ -16,6 +16,7 @@ return {
             ["<C-p>"] = "Find files",
             ["[d"] = "Go to prev diagnostic",
             ["]d"] = "Go to next diagnostic",
+            gw = "Format the text included in the next motion (gq in Vim)",
         })
         wk.register({
             rn = "Rename identifier",
