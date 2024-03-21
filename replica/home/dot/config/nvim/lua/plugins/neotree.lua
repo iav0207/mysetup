@@ -10,7 +10,13 @@ return {
 	config = function()
 		vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", {})
 		require("neo-tree").setup({
-			window = { width = 30 },
+			window = {
+                width = 30,
+                mappings = {
+                    ["l"] = "open",
+                    ["h"] = "close_node",
+                },
+            },
 			buffers = { follow_current_file = { enabled = true } },
 			filesystem = {
 				follow_current_file = { enabled = true },
