@@ -19,6 +19,12 @@ return {
             gw = "Format the text included in the next motion (gq in Vim)",
         })
         wk.register({
+            ["<leader>o"] = "Obsidian",
+            ["<leader>c"] = "Code",
+            ["<leader>m"] = "Make",
+            ["<leader>s"] = "Search",
+        })
+        wk.register({
             rn = "Rename identifier",
             fg = "File grep",
             dv = {
