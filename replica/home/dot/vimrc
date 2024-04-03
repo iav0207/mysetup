@@ -135,10 +135,13 @@ endif
 " https://stackoverflow.com/a/73444171/9401508
 " more info on mapping alt keys :help map-alt-keys
 if has('gui_running')
-    imap <M-BS> <C-w>
+    inoremap <M-BS> <C-w>
 else
-    imap <Esc><BS> <C-w>
+    inoremap <Esc><BS> <C-w>
 endif
+
+" Delete key mapping (insert mode)
+inoremap <C-d> <Del>
 
 " Makefile bindings for Advent of Code
 nmap <leader>mb :w<CR>:!make build<CR>
