@@ -34,8 +34,75 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        keys = {
+            {
+                "gD",
+                "<cmd>lua vim.lsp.buf.declaration()<cr>",
+                desc = "Goto declaration",
+            },
+            {
+                "gW",
+                "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>",
+                desc = "Search for workspace symbol",
+            },
+            {
+                "K",
+                "<cmd>lua vim.lsp.buf.hover()<cr>",
+                desc = "LSP hover",
+            },
+            {
+                "gk",
+                "<cmd>lua vim.lsp.buf.hover()<cr>",
+                desc = "LSP hover",
+            },
+            {
+                "<leader>rn",
+                "<cmd>lua vim.lsp.buf.rename()<cr>",
+                desc = "Rename word under cursor",
+            },
+            {
+                "<leader>ca",
+                "<cmd>lua vim.lsp.buf.code_action()<cr>",
+                desc = "Code Actions",
+            },
+            {
+                "gd",
+                "<cmd>lua vim.lsp.buf.definition()<cr>",
+                desc = "Goto definition",
+            },
+            {
+                "gi",
+                "<cmd>lua vim.lsp.buf.implementation()<cr>",
+                desc = "Goto implementation",
+            },
+            {
+                "gr",
+                "<cmd>lua vim.lsp.buf.references()<cr>",
+                desc = "Show references",
+            },
+            {
+                "[d",
+                "<cmd>lua vim.diagnostic.goto_prev()<cr>",
+                desc = "Goto previous diagnostic",
+            },
+            {
+                "]d",
+                "<cmd>lua vim.diagnostic.goto_next()<cr>",
+                desc = "Goto next diagnostic",
+            },
+            {
+                "<leader>e",
+                "<cmd>lua vim.diagnostic.open_float()<cr>",
+                desc = "Open diagnostic float",
+            },
+            {
+                "<leader>i",
+                "<cmd>lua vim.diagnostic.open_float()<cr>",
+                desc = "Open diagnostic float",
+            },
+        },
         config = function()
-            local cap = require('cmp_nvim_lsp').default_capabilities()
+            local cap = require("cmp_nvim_lsp").default_capabilities()
 
             local lspc = require("lspconfig")
             lspc.hls.setup({ capabilities = cap })
@@ -45,10 +112,6 @@ return {
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-            vim.keymap.set("n", "<leader>i", vim.diagnostic.open_float)
-            vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-            vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
             vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
             -- Use LspAttach autocommand to only map the following keys
@@ -62,15 +125,8 @@ return {
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
                     local opts = { buffer = ev.buf }
-                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-                    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
                     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-                    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
                     vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-                    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
                     vim.keymap.set("n", "<leader>f", function()
                         vim.lsp.buf.format({ async = true })
                     end, opts)
