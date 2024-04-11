@@ -27,6 +27,7 @@ return {
         wk.register({
             rn = "Rename identifier",
             fg = "File grep",
+            cp = "Copy file path to clipboard",
             dv = {
                 name = "Diffview",
                 o = "Open",

@@ -126,6 +126,9 @@ let g:Tex_DefaultTargetFormat='pdf'
 " System clipboard copy
 vmap <C-c> :w !pbcopy<CR><CR>
 
+" Copy full path of the current buffer to clipboard
+nnoremap <Leader>cp :let @+=expand('%:p')<CR>
+
 set shell=$SHELL
 
 if !has('nvim')
