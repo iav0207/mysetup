@@ -10,3 +10,5 @@ nvimdiff.executable = nvim
 nvimdiff.args = -d $output -M $local $base $other -c "wincmd J" -c "set modifiable" -c "set write" -c "nnoremap co :diffget 2<cr>" -c "nnoremap ct :diffget 4<cr>"
 nvimdiff.premerge = keep
 nvimdiff.check = conflicts
+[alias]
+sa = sync --all
