@@ -43,9 +43,6 @@ nnoremap <leader>qa :qa<CR>
 " Enable autoread to reload files when they are changed.
 set autoread
 
-" Enable file type plugins to load different settings for different file types.
-filetype plugin on
-
 autocmd BufNewFile,BufRead *zshrc* set filetype=sh
 
 " Encoding settings
@@ -78,7 +75,6 @@ set wrap
 set ruler " Display the cursor coordinates in the bottom right corner.
 set showmode " Show the current mode in the status line.
 set showcmd " Show the current command in the status line.
-syntax on
 set autoindent
 
 " Search settings
@@ -100,19 +96,11 @@ vnoremap <c-f> y<ESC>/<c-r>"<CR>
 " Display spaces and tabs in list mode.
 set listchars=tab:>-,trail:-
 
-" LaTeX-Suite
-
-" Enable Latex-Suite for LaTeX files.
-filetype plugin on
-
 " Set `shellslash` to ensure that LaTeX is called correctly on Windows.
 set shellslash
 
 " Set `grepprg` to always generate a file-name.
 set grepprg=grep\ -nH\ $*
-
-" Enable automatic indentation
-filetype indent on
 
 " Set the default filetype for empty LaTeX files to `tex`.
 let g:tex_flavor='latex'
@@ -134,6 +122,8 @@ set shell=$SHELL
 if !has('nvim')
     colorscheme slate
     syntax on " Enable syntax highlighting.
+    filetype plugin on
+    filetype indent on
 endif
 
 " Using alt+backspace to delete a word in insert mode
