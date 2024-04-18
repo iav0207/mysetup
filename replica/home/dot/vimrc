@@ -138,6 +138,9 @@ endif
 " Delete key mapping (insert mode)
 inoremap <C-d> <Del>
 
+" Toggle between this and previous buffer
+nmap <leader>ft <c-^>
+
 " Makefile bindings for Advent of Code
 nmap <leader>mb :w<CR>:!make build<CR>
 nmap <leader>mde :w<CR>:!make build && make debug < example.txt<CR>
