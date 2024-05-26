@@ -34,6 +34,7 @@ brew_pkgs=(
     bat
     p7zip # 7z
     npm # having npm installed fixed the problem of pyright LSP not attaching
+    maven
 )
 
 apt_pkgs=(
@@ -46,6 +47,7 @@ apt_pkgs=(
     p7zip
     python3.11-venv # for some nvim language servers
     npm
+    maven
 )
 
 install_omz() {
