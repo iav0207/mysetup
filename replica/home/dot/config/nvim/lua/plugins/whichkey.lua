@@ -51,7 +51,7 @@ return {
             },
             e = "Open diagnostic float",
             i = "Open diagnostic float",
-            q = "List all diagnostics",
+            qe = "List all diagnostics",
             och = "[Obsidian] Toggle check boxes",
         }, {
             prefix = "<leader>",

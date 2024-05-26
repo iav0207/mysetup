@@ -112,7 +112,7 @@ return {
 
 			-- Global mappings.
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
-			vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+			vim.keymap.set("n", "<leader>qe", vim.diagnostic.setloclist)
 			vim.keymap.set("n", "<leader>f", function()
 				vim.lsp.buf.format({ async = true })
 			end)
