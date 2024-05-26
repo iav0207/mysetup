@@ -10,6 +10,7 @@ return {
 		config = function()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
+					"jdtls",
 					"kotlin_language_server",
 					"ktlint",
 					"stylua",
@@ -24,13 +25,17 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"hls", --haskell
+					"hls", -- haskell
+					"jdtls", -- java
 					"kotlin_language_server",
 					"lua_ls",
 					"pyright", -- python
 				},
 			})
 		end,
+	},
+	{
+		"mfussenegger/nvim-jdtls",
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -106,6 +111,7 @@ return {
 
 			local lspc = require("lspconfig")
 			lspc.hls.setup({ capabilities = cap })
+			lspc.jdtls.setup({ capabilities = cap })
 			lspc.kotlin_language_server.setup({ capabilities = cap })
 			lspc.lua_ls.setup({ capabilities = cap })
 			lspc.pyright.setup({ capabilities = cap })
