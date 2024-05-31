@@ -12,8 +12,8 @@ nvimdiff.premerge = keep
 nvimdiff.check = conflicts
 [alias]
 sa = sync --all
-stnp = st --pager never
+st = status --pager never
+stp = status --pager always
 xlnp = st --pager never
 stc = st --change
-stcnp = st --pager never --change
 mergetool = !nvim -n -c "DiffviewOpen" && hg resolve --mark && hg purge -I **/*.orig --all
