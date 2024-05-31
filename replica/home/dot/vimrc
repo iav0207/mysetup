@@ -149,8 +149,8 @@ nmap <leader>mre :w<CR>:!make build && make run < example.txt<CR>
 nmap <leader>mri :w<CR>:!make build && make run < input.txt<CR>
 
 " Execute shell commands inside the buffer, https://www.reddit.com/r/neovim/s/lPtUTKFkyJ
-nmap <leader>xp yy2o<ESC>kpV:!/bin/bash<CR>
-vmap <leader>xp y'<P'<O<ESC>'>o<ESC>:<C-u>'<,'>!/bin/bash<CR>
+nmap <leader>xsh yy2o<ESC>kpV:!/bin/bash<CR>
+vmap <leader>xsh y'<P'<O<ESC>'>o<ESC>:<C-u>'<,'>!/bin/bash<CR>
 
 " A possibility to plug in machine-specific configuration
 if filereadable('~/.vimrc.local')
