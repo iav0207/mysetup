@@ -11,12 +11,21 @@ return {
 		vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", {})
 		require("neo-tree").setup({
 			window = {
-                width = 30,
-                mappings = {
-                    ["l"] = "open",
-                    ["h"] = "close_node",
-                },
-            },
+				width = 30,
+				mappings = {
+					["l"] = "open",
+					["h"] = "close_node",
+					["<c-o>"] = "focus_preview",
+					["S"] = "open_split",
+					["s"] = "open_vsplit",
+				},
+				fuzzy_finder_mappings = { -- define keymaps for filter popup window in fuzzy_finder_mode
+					["<down>"] = "move_cursor_down",
+					["<c-j>"] = "move_cursor_down",
+					["<up>"] = "move_cursor_up",
+					["<c-k>"] = "move_cursor_up",
+				},
+			},
 			buffers = { follow_current_file = { enabled = true } },
 			filesystem = {
 				follow_current_file = { enabled = true },
