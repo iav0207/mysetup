@@ -138,6 +138,10 @@ endif
 " Delete key mapping (insert mode)
 inoremap <C-d> <Del>
 
+" Jumping to new line when in the middle of a line in insert mode
+" This requires iTerm configuration, see https://stackoverflow.com/a/42461580.
+inoremap <S-CR> <Esc>o
+
 " Toggle between this and previous buffer
 nmap <leader>ft <c-^>
 
