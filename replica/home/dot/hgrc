@@ -16,4 +16,4 @@ st = status --pager never
 stp = status --pager always
 xlnp = st --pager never
 stc = st --change
-mergetool = !nvim -n -c "DiffviewOpen" && hg resolve --mark && hg purge -I **/*.orig --all
+mergetool = !nvim -n -c "colorscheme default" -c "DiffviewOpen" && hg resolve --mark && hg purge -I **/*.orig --all
