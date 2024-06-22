@@ -16,6 +16,7 @@ return {
 					"stylua",
 					"black",
 					"isort",
+                    "gopls",
 				},
 			})
 		end,
@@ -30,6 +31,7 @@ return {
 					"kotlin_language_server",
 					"lua_ls",
 					"pyright", -- python
+                    "gopls",
 				},
 			})
 		end,
@@ -115,6 +117,7 @@ return {
 			lspc.kotlin_language_server.setup({ capabilities = cap })
 			lspc.lua_ls.setup({ capabilities = cap })
 			lspc.pyright.setup({ capabilities = cap })
+			lspc.gopls.setup({ capabilities = cap })
 
 			-- Global mappings.
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
