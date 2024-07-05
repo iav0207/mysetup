@@ -50,6 +50,12 @@ alias cat='bat -p'
 macos || alias bat='batcat'
 macos || alias eza='exa'
 
+ldf() { # most recently downloaded file
+  local downloads="${HOME}/Downloads"
+  local last="$(ls -t modified -- "${downloads}" | head -n1)";
+  echo "${downloads}/${last}"
+}
+
 # other sources
 
 source_if_exists ~/.travis/travis.sh # added by travis gem
